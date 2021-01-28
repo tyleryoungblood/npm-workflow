@@ -49,3 +49,12 @@ Github Pages lets you serve from /root or /master but that won't work for us bec
 `git subtree push --prefix dist origin gh-pages`
 
 This will create a new branch called gh-pages and your project will be visible from https://username.github.io/repo-name ... so for example [https://tyleryoungblood.github.io/npm-workflow/](https://tyleryoungblood.github.io/npm-workflow/). If you have trouble finding the right URL, go to /settings in github and scroll to the GitHub Pages section. You should see `Your site is ready to be published at https://username.github.io/repo-name/` with username being replaced by your actual github username and repo-name being replaced by the name of the repo. 
+
+At this point you can either make changes directly in your gh-pages branch (not ideal), or make them locally in your master branch, and once you're satisfied with those thances, merge them into your gh-pages branch. 
+
+1. make changes in `master` and commit and push them.
+1. `git checkout gh-pages` to switch to your gh-pages branch
+1. `git merge master` to merge your changes from master into gh-pages
+    - if git complains about unrelated histories try `git merge origin master --allow-unrelated-histories`
+1. `git push` to push your local gh-pages brach up to your remote branch
+1. Wait forever ... I mean at least 10 minutes ... for your changes to display on your gh-changes page
