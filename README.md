@@ -1,6 +1,11 @@
 # NPM Workflow #
 
-This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) tutorial.
+This workflow is loosely based on two tutorials: 
+- Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) 
+- PentaCode's How To Create A Build System with NPM Scripts
+    - [Part 1](https://www.youtube.com/watch?v=yQGkNO_Cot0)
+    - [Part 2](https://www.youtube.com/watch?v=Ajt2-fWRwOk)
+    - [Part 3](https://www.youtube.com/watch?v=pkdYYCIzg_I)
 
 ## Quick Start
 1. Clone repo locally $`git clone git@github.com:tyleryoungblood/npm-workflow.git`
@@ -14,14 +19,14 @@ After running `npm start` from within the project directory a Hello World page s
 
 ## bs-config.js ##
 
-`bs-config.js` is necessary because lite-server looks for changes to CSS and JS files at the project root level by default. This config file gives you the freedom to have a build directory separate from your src directory (or root).
+`bs-config.js` is necessary because lite-server looks for changes to CSS and JS files at the project root level by default. This config file gives you the freedom to have a build or dist directory separate from your src directory (or root).
 - `"port": 8000` tells live-server to use localhost:8000 instead of the default port of 3000.
 - `"files": ["./build/**/*.{html,htm,css,js}"]` tells live-server to watch for html, css, and JS changes in the build directory. 
-- `"server": { "baseDir": "./build" }` tells live-server to serve index.html from within /build and not /root.
+- `"server": { "baseDir": "./build" }` tells live-server to serve index.html from within /build and not root.
 
 ## NPM Commands ##
 
-1. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` and `npm run serve` concurrently
+1. `npm start` is shorthand for `npm run start` and runs `npm run watch` and `npm run db` and `npm run serve` concurrently
 1. `npm run watch` uses nodemon to listen for js and scss changes and runs `build` when changes are made
     - build folder must be ignored using `--ignore build/` to prevent endless build loop!
 1. `npm run serve` starts a dev server using [lite-server](https://www.npmjs.com/package/light-server) at port specified in bs-config.json
