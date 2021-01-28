@@ -46,7 +46,7 @@ After running `npm start` from within the project directory a Hello World page s
 ## Using with Github Pages ##
 Github Pages lets you serve from /root or /master but that won't work for us because we are using a `/build` directory for our compiled site. To force Github to use `/build` type the following command in your terminal.
 
-`git subtree push --prefix dist origin gh-pages`
+`git subtree push --prefix build origin gh-pages`
 
 This will create a new branch called gh-pages and your project will be visible from https://username.github.io/repo-name ... so for example [https://tyleryoungblood.github.io/npm-workflow/](https://tyleryoungblood.github.io/npm-workflow/). If you have trouble finding the right URL, go to /settings in github and scroll to the GitHub Pages section. You should see `Your site is ready to be published at https://username.github.io/repo-name/` with username being replaced by your actual github username and repo-name being replaced by the name of the repo. 
 
