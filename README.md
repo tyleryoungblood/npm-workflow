@@ -4,16 +4,29 @@ This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](h
 
 ## Quick Start
 1. Clone repo locally $`git clone git@github.com:tyleryoungblood/npm-workflow.git`
-2. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` concurrently
+1. Run `npm install` to install the necessary packages into a node_modules folder
+1. To run the project locally, type `npm start` in the command line. 
+    - A new browser tab should open at localhost:8000 and display "Hello World"
+    - `npm start` is shorthand for `npm run start` and runs `npm run watch` and `npm run db` and `npm run serve` concurrently
+    - the `-k` in `"start": "concurrently -k ...` tells the [concurrently package](https://www.npmjs.com/package/concurrently) to kill any previously running versions of start, watch, and serve before starting new ones.
+
+After running `npm start` from within the project directory a Hello World page should load at `localhost:8000` or whatever port specified in `bs-config.js`. 
+
+## bs-config.js ##
+
+`bs-config.js` is necessary because lite-server looks for changes to CSS and JS files at the project root level by default. This config file gives you the freedom to have a build directory separate from your src directory (or root).
+- `"port": 8000` tells live-server to use localhost:8000 instead of the default port of 3000.
+- `"files": ["./build/**/*.{html,htm,css,js}"]` tells live-server to watch for html, css, and JS changes in the build directory. 
+- `"server": { "baseDir": "./build" }` tells live-server to serve index.html from within /build and not /root.
 
 ## NPM Commands ##
 
-1. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` concurrently
-1. `npm run watch` uses nodemon to listen for js and css changes and runs `build` and `serve` when changes are made
+1. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` and `npm run serve` concurrently
+1. `npm run watch` uses nodemon to listen for js and scss changes and runs `build` when changes are made
     - build folder must be ignored using `--ignore build/` to prevent endless build loop!
-1. `npm run serve` starts a dev server using [lite-server](https://www.npmjs.com/package/light-server) at localhost:3000
+1. `npm run serve` starts a dev server using [lite-server](https://www.npmjs.com/package/light-server) at port specified in bs-config.json
     - live reloading
-    - Browser-sync (a sub module of lite-server, so no need to install separately)
+    - Browser-sync (included as a sub module of lite-server, so no need to install separately)
     - No need to configure `watch:css` or `watch:js` - live-server will watch all files automatically
 1. `npm run db` starts a JSON-server for playing with REST APIs [read more here](https://scotch.io/tutorials/json-server-as-a-fake-rest-api-in-frontend-development)
 1. `npm run build:js` will use Browserify minify your JavaScript files and move them to `build/js/app.min.js`
