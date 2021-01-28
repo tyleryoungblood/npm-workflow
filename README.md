@@ -48,4 +48,4 @@ Github Pages lets you serve from /root or /master but that won't work for us bec
 
 `git subtree push --prefix dist origin gh-pages`
 
-This will create a new branch called gh-pages and your project will be visible from https://username.github.io/repo-name ... so for example [https://tyleryoungblood.github.io/npm-workflow/](https://tyleryoungblood.github.io/npm-workflow/).
+This will create a new branch called gh-pages and your project will be visible from https://username.github.io/repo-name ... so for example [https://tyleryoungblood.github.io/npm-workflow/](https://tyleryoungblood.github.io/npm-workflow/). If you have trouble finding the right URL, go to /settings in github and scroll to the GitHub Pages section. You should see `Your site is ready to be published at https://username.github.io/repo-name/` with username being replaced by your actual github username and repo-name being replaced by the name of the repo. 
