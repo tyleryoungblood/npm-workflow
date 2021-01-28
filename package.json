@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently -k \"npm run watch\" \"npm run db\"",
-    "serve": "lite-server --baseDir='build'",
-    "db": "json-server --watch db.json --port 3005",
-    "build": "npm run build:css && npm run build:js",
+    "watch": "nodemon -e js,scss -x \"npm run build && npm run serve\" --ignore build/",
+    "build": "npm run build:css && npm run lint && npm run build:js",
     "build:js": "browserify js/**.js>build/js/app.min.js",
     "lint": "jshint ./js/**.js",
     "build:css": "node-sass --include-path scss scss/main.scss build/css/styles.min.css",
-    "watch": "nodemon -e js,scss -x \"npm run build && npm run serve\" --ignore build/",
+    "db": "json-server --watch db.json --port 3005",
+    "serve": "lite-server --baseDir='build'",
     "test": "mocha test"
   },
   "repository": {
