@@ -41,9 +41,23 @@ After running `npm start` from within the project directory a Hello World page s
 1. `npm run build:js` will use Browserify minify your JavaScript files and move them to `build/js/app.min.js`
 1. `npm run lint` will check JS files in your source folder and detect errors
 1. `npm run build:css` will compile your .scss into css
+1. `npm run deploy` will push your `/build directory to a new branch called gh-pages and set up Github Pages (see more details below).
+    - if you run into `error: unable to delete 'gh-pages': remote ref does not exist` it means you don't have a gh-pages branch. Try running `git subtree push --prefix build origin gh-pages` from the command line instead. 
 1. `npm test` shorthand for `npm run test` will run Mocha tests
 
 ## Using with Github Pages ##
+You should be able to deploy your project to gh-pages using the following command: 
+
+- `npm run deploy` (run from your master branch) 
+    - this runs `git push origin :gh-pages` (deleting gh-pages branch) && `git subtree push --prefix build origin gh-pages` (pushing a new gh-pages branch)
+    - if you run into `error: unable to delete 'gh-pages': remote ref does not exist` it means you don't have a gh-pages branch. Try running `git subtree push --prefix build origin gh-pages` from the command line instead.
+
+---
+
+## More detaild Github Pages Instructions ##
+
+If sor some reason the `deploy` command doesn't work, read more below.
+
 Github Pages lets you serve from /root or /master but that won't work for us because we are using a `/build` directory for our compiled site. To force Github to use `/build` type the following command in your terminal.
 
 `git subtree push --prefix build origin gh-pages`
@@ -58,3 +72,4 @@ At this point you can either make changes directly in your gh-pages branch (not 
     - if git complains about unrelated histories try `git merge origin master --allow-unrelated-histories`
 1. `git push` to push your local gh-pages brach up to your remote branch
 1. Wait forever ... I mean at least 10 minutes ... for your changes to display on your gh-changes page
+1. It's possible that your changes never show. If that's the case, try running `git subtree push --prefix build origin gh-pages` again
