@@ -1,5 +1,5 @@
 var $ = require('jquery');
 
 $(function(){
-    alert('it works!');
+    console.log('hello.js is loading');
 });
