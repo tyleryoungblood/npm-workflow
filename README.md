@@ -2,11 +2,14 @@
 
 This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) tutorial.
 
-## Usage ##
-
+## Quick Start
 1. Clone repo locally $`git clone git@github.com:tyleryoungblood/npm-workflow.git`
 2. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` concurrently
-3. `npm run watch` uses nodemon to listen for js and css changes and runs `build` and `serve` when changes are made
+
+## NPM Commands ##
+
+1. `npm start` shorthand for `npm run start` and runs `npm run watch` and `npm run db` concurrently
+2. `npm run watch` uses nodemon to listen for js and css changes and runs `build` and `serve` when changes are made
     - build folder must be ignored using `--ignore build/` to prevent endless build loop!
 4. `npm run serve` starts a dev server using [lite-server](https://www.npmjs.com/package/light-server) at localhost:3000
     - live reloading
