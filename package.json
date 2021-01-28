@@ -4,14 +4,14 @@
   "description": "This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) tutorial.",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently -k \"npm run watch\" \"npm run db\"",
-    "watch": "nodemon -e js,scss -x \"npm run build && npm run serve\" --ignore build/",
+    "start": "concurrently -k \"npm run watch\" \"npm run db\" \"npm run serve\"",
+    "watch": "nodemon -e js,scss -x \"npm run build\" --ignore build/",
     "build": "npm run build:css && npm run lint && npm run build:js",
     "build:js": "browserify js/**.js>build/js/app.min.js",
     "lint": "jshint ./js/**.js",
     "build:css": "node-sass --include-path scss scss/main.scss build/css/styles.min.css",
     "db": "json-server --watch db.json --port 3005",
-    "serve": "lite-server --baseDir='build'",
+    "serve": "lite-server --config='bs-config.json'",
     "test": "mocha test"
   },
   "repository": {
