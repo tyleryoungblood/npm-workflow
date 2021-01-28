@@ -11,3 +11,4 @@ This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](h
     - Browser-sync (a sub module of lite-server, so no need to install separately)
     - No need to configure `watch:css` or `watch:js` - live-server will watch all files automatically. 
 4. `npm run db` starts a JSON-server for playing with REST APIs [read more here](https://scotch.io/tutorials/json-server-as-a-fake-rest-api-in-frontend-development)
+5. `npm run uglify` will minify your JavaScript files and move them to `dist/js/app.js`
