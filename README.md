@@ -1,11 +1,15 @@
 # NPM Workflow #
 
+This workflow gives you a boilerplate web app the following features:
+- SASS preprossing (via node-sass)
+    - css partials using `_partialName`
+- require() (via Browserify) 
+    - break your JS up into separate modules
+- live-reloading (via browser-sync). 
+
 This workflow is loosely based on two tutorials: 
 - Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) 
-- PentaCode's How To Create A Build System with NPM Scripts
-    - [Part 1](https://www.youtube.com/watch?v=yQGkNO_Cot0)
-    - [Part 2](https://www.youtube.com/watch?v=Ajt2-fWRwOk)
-    - [Part 3](https://www.youtube.com/watch?v=pkdYYCIzg_I)
+- PentaCode's How To Create A Build System with NPM Scripts [Part 1](https://www.youtube.com/watch?v=yQGkNO_Cot0), [Part 2](https://www.youtube.com/watch?v=Ajt2-fWRwOk), and [Part 3](https://www.youtube.com/watch?v=pkdYYCIzg_I)
 
 ## Quick Start
 1. Clone repo locally $`git clone git@github.com:tyleryoungblood/npm-workflow.git`
