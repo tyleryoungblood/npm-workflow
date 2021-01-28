@@ -1,0 +1,20 @@
+{
+  "name": "npm-workflow",
+  "version": "1.0.0",
+  "description": "This workflow is loosely based on this Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) tutorial.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyleryoungblood/npm-workflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyleryoungblood/npm-workflow/issues"
+  },
+  "homepage": "https://github.com/tyleryoungblood/npm-workflow#readme"
+}
