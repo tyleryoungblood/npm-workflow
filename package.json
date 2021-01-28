@@ -9,6 +9,7 @@
     "db": "json-server --watch db.json --port 3005",
     "build:js": "mkdir -p dist/js && uglifyjs js/**.js -m -o build/js/app.min.js",
     "lint": "jshint src/**.js",
+    "build:js": "browserify js/**.js>build/js/app.min.js",
     "build:css": "node-sass --include-path scss scss/main.scss build/css/styles.min.css",
     "watch": "nodemon -e js,scss -x \"npm run build && npm run serve\" --ignore build/",
     "test": "mocha test"
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/tyleryoungblood/npm-workflow#readme",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "concurrently": "^5.3.0",
     "jshint": "^2.12.0",
     "json-server": "^0.16.3",
