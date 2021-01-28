@@ -10,7 +10,7 @@
     "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js",
     "lint": "jshint src/**.js",
     "sass": "node-sass --include-path scss scss/main.scss assets/main.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
