@@ -6,6 +6,7 @@ This workflow gives you a boilerplate web app the following features:
 - require() (via Browserify) 
     - break your JS up into separate modules
 - live-reloading (via browser-sync). 
+- easily deploy to Github Pages
 
 This workflow is loosely based on two tutorials: 
 - Scotch.io's [Using NPM as a Build Tool](https://scotch.io/tutorials/using-npm-as-a-build-tool) 
@@ -54,7 +55,7 @@ You should be able to deploy your project to gh-pages using the following comman
 
 ---
 
-## More detaild Github Pages Instructions ##
+## More detailed Github Pages Instructions ##
 
 If sor some reason the `deploy` command doesn't work, read more below.
 
