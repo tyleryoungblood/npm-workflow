@@ -42,3 +42,10 @@ After running `npm start` from within the project directory a Hello World page s
 1. `npm run lint` will check JS files in your source folder and detect errors
 1. `npm run build:css` will compile your .scss into css
 1. `npm test` shorthand for `npm run test` will run Mocha tests
+
+## Using with Github Pages ##
+Github Pages lets you serve from /root or /master but that won't work for us because we are using a `/build` directory for our compiled site. To force Github to use `/build` type the following command in your terminal.
+
+`git subtree push --prefix dist origin gh-pages`
+
+This will create a new branch called gh-pages and your project will be visible from https://username.github.io/repo-name ... so for example [https://tyleryoungblood.github.io/npm-workflow/](https://tyleryoungblood.github.io/npm-workflow/).
